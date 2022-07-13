@@ -1,14 +1,17 @@
 import React from 'react';
-import { Card } from '@material-ui/core';
+import { Card, Typography, Button, CardContent } from '@material-ui/core';
 
-import { useDispatch } from 'react-redux';
-
-const Post = () => {
-  const dispatch = useDispatch();
+const Post = ({post}) => {
 
   return (
     <Card>
-      hi
+      <div className = "post">
+        <Typography variant="h6">{post.title}</Typography>
+        <Typography variant="h6">{post.first_name}</Typography>
+        <Typography variant="h6">{post.last_name}</Typography>
+        <Typography variant="h6">{post.description}</Typography>
+      </div>
+      
     </Card>
   )
 }

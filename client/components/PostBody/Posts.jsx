@@ -1,14 +1,20 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import Post from './Posts';
+import Post from './Post.jsx';
 
 
-const Posts = () => {
-  const post = useSelector((state) => state.posts)
+const Posts = ({posts}) => {
+  const postArray = [];
+
+  for (let i = 0; i < posts.length; i++) {
+    postArray.push(<Post post={posts[i]} key={i}/>);
+  }
+  console.log(postArray)
+
 
   return (
     <Grid>
-      <Post post={post}></Post>
+      {postArray}
     </Grid> 
   )
 }

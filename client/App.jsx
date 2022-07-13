@@ -1,32 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
-import { getPosts } from './actions/actions';
-import Posts from './components/PostBody/Posts.jsx';
-///Users/benjamincauffman/Desktop/Codesmith/Week_5/Solo_Project/client/components/PostBody/Posts
+import { Routes, Route } from 'react-router-dom';
+import { AllPosts } from './components/AllPosts'
+
+//making request in app.js
+
+import axios from 'axios';
+const serverUrl = 'http://localhost:3000/api';
 
 
 export const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getPosts());
-  },[dispatch]);
 
 
 return (
-  <Container className = "main" maxWidth = 'lg'>
-    <Container className = "header">
-      <Typography className = "title" variant ="h2" align="center">This Time Last Year...</Typography>
-    </Container>
-    <Container className = "body">
-      <Typography className = "posts" variant="h3">Body Goes Here</Typography>
-      <Posts/>
-    </Container>
-  </Container>
+<Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
 
-)
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Routes>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
+  );
 }
+export default App;
 
 
 
