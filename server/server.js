@@ -1,7 +1,9 @@
 const path = require('path');
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 
 const myRouter = require('./routes/router');
 
@@ -10,6 +12,7 @@ const PORT = 3000;
 
  app.use(express.json());
  app.use(express.urlencoded({ extended: true }));
+ 
  
  /**
   * handle requests for static files
