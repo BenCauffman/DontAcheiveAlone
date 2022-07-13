@@ -1,31 +1,43 @@
 import React, { useState, useEffect } from 'react';
-import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-import Posts from './components/PostBody/Posts.jsx';
+import { Container, AppBar, Typography, Grow, Grid, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
+import Posts from './PostBody/Posts.jsx';
+import { Routes, Route, Router, Link } from 'react-router-dom';
 
 //making request in app.js
 
-import axios from 'axios';
-const serverUrl = 'http://localhost:3000/api';
 
 
-export const AllPosts = () => {
-  const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const data = await axios.get(serverUrl);
-      setPosts(data.data);
-    };
-    fetchPosts();
-  }, []);
+const AllPosts = ({posts}) => {
+
+  console.log(posts)
+
+  // const handleChange = () => {
+
+
+  // }
 
 
 return (  
   <Container className = "main" maxWidth = 'lg'>
   <Container className = "header">
-    <Typography className = "title" variant ="h2" align="center">This Time Last Year...</Typography>
+    <Typography className = "title" variant ="h2" align="center">This Time Last ...</Typography>
+    <FormControl fullWidth>
+  <InputLabel id="demo-simple-select-label">Age</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value={10}
+    label="TimeFrame"
+    // onChange={handleChange}
+  >
+    <MenuItem value={10}>Week</MenuItem>
+    <MenuItem value={20}>Month</MenuItem>
+    <MenuItem value={30}>Year</MenuItem>
+  </Select>
+</FormControl>
   </Container>
-  <button> Create New Post </button>
+  <Link to ='/create'> Create New Post </Link>
   <Container className = "body">
     <Typography className = "posts" variant="h5">Select Timeframe</Typography>
     <Posts posts = {posts}/>
@@ -33,3 +45,4 @@ return (
   </Container>
 )
 }
+export default AllPosts

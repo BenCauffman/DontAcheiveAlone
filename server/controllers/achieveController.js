@@ -3,8 +3,14 @@ const db = require('../models/achieveModel');
 const achieveController = {};
 
 achieveController.getPosts = async (req, res, next) => {
+  const {timeframe} = req.query;
+  switch timeframe {
+    case:
+  }
 
-const query = 'SELECT * FROM posts;'
+
+const query = 'SELECT * FROM posts WHERE created_at ;'
+const params = [timeframe]
 try {
   const result = await db.query(query);
   res.locals.posts = result.rows;

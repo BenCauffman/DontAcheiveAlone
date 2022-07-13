@@ -1,52 +1,50 @@
 import React, { useState, useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-import { Routes, Route } from 'react-router-dom';
-import { AllPosts } from './components/AllPosts'
+import { Routes, Route, Router, Link } from 'react-router-dom';
+import AllPosts from './components/AllPosts.jsx';
+import CreateAchievement from './components/CreateAchievement.jsx'
 
 //making request in app.js
-
 import axios from 'axios';
 const serverUrl = 'http://localhost:3000/api';
 
 
+
 export const App = () => {
+
+  const [posts, setPosts] = useState([]);
+  const [postData, setPostData] = useState({first_name: '', last_name: '', title: '', description: ''});
+  const [timeframe, setTimeframe] = useState('')
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const data = await axios.get(serverUrl, {
+        params: {
+          timeframe: 'hi'
+        }
+      });
+      setPosts(data.data);
+    };
+    fetchPosts();
+  }, [postData]);
+
 
 
 return (
-<Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Routes>
-          <Route path="/about">
-            <About />
+          <Route path="/" element ={<AllPosts posts = {posts} timeframe={timeframe} setTimeframe={setTimeframe} />}>
           </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
+          <Route path="/create" element ={<CreateAchievement posts = {posts} postData = {postData} setPostData = {setPostData} />}>
           </Route>
         </Routes>
       </div>
-    </Router>
   );
 }
-export default App;
+
 
 
 
