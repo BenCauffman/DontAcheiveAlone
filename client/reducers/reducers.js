@@ -8,15 +8,14 @@ const initialState = {
 const postReducer =  (state = initialState, action) => {
   switch (action.type) {
     case FETCH: 
-    const newPosts = action.payload;
-    console.log(newPosts)
-    Object.assign(state.posts, newPosts)
+    console.log("hi")
       return {
-        ...state
+        ...state,
+        posts: action.payload,
       }
     default: 
       return {
-        ...state
+        state
         }
   }
 };

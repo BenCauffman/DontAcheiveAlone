@@ -9,7 +9,7 @@ import { reducers } from './reducers/index';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-const composedEnhancer = composeWithDevTools(applyMiddleware(thunk));
+const composedEnhancer = composeWithDevTools(applyMiddleware(thunk))
 
 const store = createStore(reducers, composedEnhancer);
 

@@ -6,10 +6,11 @@ import { useDispatch } from 'react-redux';
 const Post = () => {
   const dispatch = useDispatch();
 
+
   return (
-    <Card>
+    <button>
       hi
-    </Card>
+    </button>
   )
 }
 export default Post;

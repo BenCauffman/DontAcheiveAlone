@@ -21,7 +21,7 @@ return (
     </Container>
     <Container className = "body">
       <Typography className = "posts" variant="h3">Body Goes Here</Typography>
-      <Posts/>
+      <Posts></Posts>
     </Container>
   </Container>
 
