@@ -4,15 +4,31 @@ const achieveController = {};
 
 achieveController.getPosts = async (req, res, next) => {
   const {timeframe} = req.query;
-  switch timeframe {
-    case:
+  console.log(timeframe)
+  const date = new Date();
+  let myDate;
+  switch (timeframe) {
+    case 'Week': 
+      myDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - 7);
+      break;
+    case 'Month':
+      myDate = new Date(date.getFullYear(), date.getMonth() - 1, date.getDate());
+      break;
+    case 'Year':
+      myDate = new Date(date.getFullYear() - 1, date.getMonth(), date.getDate());
+      break;
+    default:
+      console.log('default')
+      myDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - 7);
+
   }
+  console.log(myDate)
 
 
-const query = 'SELECT * FROM posts WHERE created_at ;'
-const params = [timeframe]
+const query = 'SELECT * FROM posts WHERE created_at < $1 ORDER BY created_at DESC;'
+const params = [myDate]
 try {
-  const result = await db.query(query);
+  const result = await db.query(query, params);
   res.locals.posts = result.rows;
   console.log('successful fetch');
   next();

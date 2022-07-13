@@ -8,14 +8,14 @@ import { Routes, Route, Router, Link } from 'react-router-dom';
 
 
 
-const AllPosts = ({posts}) => {
+const AllPosts = ({posts, timeframe, setTimeframe}) => {
 
   console.log(posts)
 
-  // const handleChange = () => {
-
-
-  // }
+  const handleChange = (e) => {
+    console.log('handling change', e.target.value)
+    setTimeframe(e.target.value);
+  }
 
 
 return (  
@@ -23,17 +23,17 @@ return (
   <Container className = "header">
     <Typography className = "title" variant ="h2" align="center">This Time Last ...</Typography>
     <FormControl fullWidth>
-  <InputLabel id="demo-simple-select-label">Age</InputLabel>
+  <InputLabel id="demo-simple-select-label">TimeFrame</InputLabel>
   <Select
     labelId="demo-simple-select-label"
     id="demo-simple-select"
-    value={10}
+    value={timeframe}
     label="TimeFrame"
-    // onChange={handleChange}
+    onClick={handleChange}
   >
-    <MenuItem value={10}>Week</MenuItem>
-    <MenuItem value={20}>Month</MenuItem>
-    <MenuItem value={30}>Year</MenuItem>
+    <MenuItem value={'Week'} onClick={handleChange}>Week</MenuItem>
+    <MenuItem value={'Month'} onClick={handleChange}>Month</MenuItem>
+    <MenuItem value={'Year'} onClick={handleChange}>Year</MenuItem>
   </Select>
 </FormControl>
   </Container>

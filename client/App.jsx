@@ -20,13 +20,13 @@ export const App = () => {
     const fetchPosts = async () => {
       const data = await axios.get(serverUrl, {
         params: {
-          timeframe: 'hi'
+          timeframe: timeframe
         }
       });
       setPosts(data.data);
     };
     fetchPosts();
-  }, [postData]);
+  }, [postData, timeframe]);
 
 
 
