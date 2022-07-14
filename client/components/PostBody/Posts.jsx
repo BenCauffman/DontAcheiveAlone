@@ -28,39 +28,48 @@ const Posts = ({posts, setPostData, postData}) => {
 
   return (
     <div style={{display : "flex", flexDirection: "column", gap: '10px'}}>
-      <div style={{display:'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <div style={{display: "flex", alignItems: 'center', backgroundColor :'white', border: '1px solid black', borderRadius: '10px', padding: '10px',width: '75vw', overflowX: 'scroll'}} >
-          <h3>Professional</h3>
-          <div style={{display: "flex", alignItems: 'center', maxWidth: '300px'}}>
+      <div style={{borderRadius: '10px',backgroundColor: 'rgb(170 238 255)',backgroundImage: "url(" + "http://res.cloudinary.com/cspaveljb/image/upload/v1499110956/note_font_pcdcst.png" + ")",backgroundSize: "contain", padding: '20px'}}>
+        <h3>Professional</h3>
+      <div >
+      <Link onClick={handleClick} style={{display: 'flex', alignItems: 'center', borderRadius: '10px'}}to = "/create">
+    <span style={{fontWeight:'bolder'}}>Add Another <span>Professional</span> Achievement</span>
+    </Link>
+          </div>
+        <div style={{display: "flex", alignItems: 'center', borderRadius: '10px', padding: '10px', overflowX: 'scroll'}} >
+          <div style={{display: "flex", alignItems: 'center', width: '300px'}}>
             {postArrayProfessional}
            </div>
         </div> 
-    <Link onClick={handleClick} style={{display: 'flex', alignItems: 'center', borderRadius: '10px', border: ['1px', 'solid', 'black']}}to = "/create">
-    <span style={{fontWeight:'bolder', backgroundColor:'white'}}>Add Another <span>Professional</span> Achievement</span>
-    </Link>
+
     </div>
 
-    <div style={{display:'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <div style={{display: "flex", alignItems: 'center', backgroundColor :'white', border: '1px solid black', borderRadius: '10px', padding: '10px',width: '75vw', overflowX: 'scroll'}} >
-          <h3>Personal</h3>
-          <div style={{display: "flex", alignItems: 'center'}}>
+    <div style={{borderRadius: '10px',backgroundColor: 'rgb(170 238 255)',backgroundImage: "url(" + "http://res.cloudinary.com/cspaveljb/image/upload/v1499110956/note_font_pcdcst.png" + ")",backgroundSize: "contain", padding: '10px'}}>
+        <h3>Personal</h3>
+      <div >
+      <Link onClick={handleClick} style={{display: 'flex', alignItems: 'center', borderRadius: '10px', border: ['1px', 'solid', 'black']}}to = "/create">
+    <span style={{fontWeight:'bolder'}}>Add Another <span>Personal</span> Achievement</span>
+    </Link>
+          </div>
+        <div style={{display: "flex", alignItems: 'center', borderRadius: '10px', padding: '10px', overflowX: 'scroll'}} >
+          <div style={{display: "flex", alignItems: 'center', maxWidth: '300px'}}>
             {postArrayPersonal}
            </div>
         </div> 
-        <Link onClick={handleClick} style={{display: 'flex', alignItems: 'center', borderRadius: '10px', border: ['1px', 'solid', 'black']}}to = "/create">
-    <span style={{fontWeight:'bolder', backgroundColor:'white'}}>Add Another <span>Personal</span> Achievement</span>
-    </Link>
+
     </div>
-    <div style={{display:'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <div style={{display: "flex", alignItems: 'center', backgroundColor :'white', border: '1px solid black', borderRadius: '10px', padding: '10px',width: '75vw', overflowX: 'scroll'}} >
-          <h3>Other</h3>
-          <div style={{display: "flex", alignItems: 'center'}}>
+    <div style={{borderRadius: '10px',backgroundColor: 'rgb(170 238 255)',backgroundImage: "url(" + "http://res.cloudinary.com/cspaveljb/image/upload/v1499110956/note_font_pcdcst.png" + ")",backgroundSize: "contain", padding: '10px'}}>
+        <h3>Other</h3>
+      <div >
+      <Link onClick={handleClick} style={{display: 'flex', alignItems: 'center', borderRadius: '10px', border: ['1px', 'solid', 'black']}}to = "/create">
+    <span style={{fontWeight:'bolder'}}>Add <span>Other</span> Achievement</span>
+    </Link>
+          </div>
+        <div style={{display: "flex", alignItems: 'center', borderRadius: '10px', padding: '10px', overflowX: 'scroll'}} >
+          <div style={{display: "flex", alignItems: 'center', maxWidth: '300px'}}>
             {postArrayOther}
            </div>
         </div> 
-        <Link onClick={handleClick} style={{display: 'flex', alignItems: 'center', borderRadius: '10px', border: ['1px', 'solid', 'black']}}to = "/create">
-    <span style={{fontWeight:'bolder', backgroundColor:'white'}}>Add <span>Other</span> Achievement</span>
-    </Link>
+
     </div>
     </div>
     )
