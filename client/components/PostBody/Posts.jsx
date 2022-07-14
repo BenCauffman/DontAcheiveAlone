@@ -28,11 +28,11 @@ const Posts = ({posts, setPostData, postData}) => {
 
   return (
     <div style={{display : "flex", flexDirection: "column", gap: '10px'}}>
-      <div style={{borderRadius: '10px',backgroundColor: 'rgb(170 238 255)',backgroundImage: "url(" + "http://res.cloudinary.com/cspaveljb/image/upload/v1499110956/note_font_pcdcst.png" + ")",backgroundSize: "contain", padding: '20px'}}>
-        <h3>Professional</h3>
+      <div style={{borderRadius: '10px',backgroundColor: 'rgb(255 170 249)',backgroundImage: "url(" + "http://res.cloudinary.com/cspaveljb/image/upload/v1499110956/note_font_pcdcst.png" + ")",backgroundSize: "contain", padding: '20px'}}>
+        <h3 style={{fontSize: '26px'}}>Professional</h3>
       <div >
       <Link onClick={handleClick} style={{display: 'flex', alignItems: 'center', borderRadius: '10px'}}to = "/create">
-    <span style={{fontWeight:'bolder'}}>Add Another <span>Professional</span> Achievement</span>
+    <span style={{fontSize:'20px'}}>Add Another <span>Professional</span> Achievement</span>
     </Link>
           </div>
         <div style={{display: "flex", alignItems: 'center', borderRadius: '10px', padding: '10px', overflowX: 'scroll'}} >
@@ -44,10 +44,10 @@ const Posts = ({posts, setPostData, postData}) => {
     </div>
 
     <div style={{borderRadius: '10px',backgroundColor: 'rgb(170 238 255)',backgroundImage: "url(" + "http://res.cloudinary.com/cspaveljb/image/upload/v1499110956/note_font_pcdcst.png" + ")",backgroundSize: "contain", padding: '10px'}}>
-        <h3>Personal</h3>
+        <h3 style={{fontSize: '26px'}}>Personal</h3>
       <div >
       <Link onClick={handleClick} style={{display: 'flex', alignItems: 'center', borderRadius: '10px', border: ['1px', 'solid', 'black']}}to = "/create">
-    <span style={{fontWeight:'bolder'}}>Add Another <span>Personal</span> Achievement</span>
+    <span style={{fontSize:'20px'}}>Add Another <span>Personal</span> Achievement</span>
     </Link>
           </div>
         <div style={{display: "flex", alignItems: 'center', borderRadius: '10px', padding: '10px', overflowX: 'scroll'}} >
@@ -57,11 +57,11 @@ const Posts = ({posts, setPostData, postData}) => {
         </div> 
 
     </div>
-    <div style={{borderRadius: '10px',backgroundColor: 'rgb(170 238 255)',backgroundImage: "url(" + "http://res.cloudinary.com/cspaveljb/image/upload/v1499110956/note_font_pcdcst.png" + ")",backgroundSize: "contain", padding: '10px'}}>
-        <h3>Other</h3>
+    <div style={{borderRadius: '10px',backgroundColor: 'rgb(191 255 170)',backgroundImage: "url(" + "http://res.cloudinary.com/cspaveljb/image/upload/v1499110956/note_font_pcdcst.png" + ")",backgroundSize: "contain", padding: '10px'}}>
+        <h3 style={{fontSize: '26px'}}>Other</h3>
       <div >
       <Link onClick={handleClick} style={{display: 'flex', alignItems: 'center', borderRadius: '10px', border: ['1px', 'solid', 'black']}}to = "/create">
-    <span style={{fontWeight:'bolder'}}>Add <span>Other</span> Achievement</span>
+    <span style={{fontSize:'20px'}}>Add <span>Other</span> Achievement</span>
     </Link>
           </div>
         <div style={{display: "flex", alignItems: 'center', borderRadius: '10px', padding: '10px', overflowX: 'scroll'}} >

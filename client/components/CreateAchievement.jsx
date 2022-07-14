@@ -36,7 +36,7 @@ const handleClick = () => {
         <TextField multiline rows ={3} maxRows={4} label = "Description" value ={postData.description} onChange ={(e)=>setPostData({...postData, description: e.target.value})}></TextField>
 
         <div >
-        <button type = "submit">Submit Achievement! Good Job</button>
+        <button style={{fontFamily: 'Permanent Marker',backgroundColor:'#ffa', padding:'10px', cursor: 'pointer'}} type = "submit">Submit Achievement! Good Job</button>
         </div>
         </div>
 
