@@ -4,6 +4,8 @@ import { Routes, Route, Router, Link } from 'react-router-dom';
 import AllPosts from './components/AllPosts.jsx';
 import CreateAchievement from './components/CreateAchievement.jsx'
 
+import './styles.scss';
+
 //making request in app.js
 import axios from 'axios';
 const serverUrl = 'http://localhost:3000/api';
@@ -13,8 +15,8 @@ const serverUrl = 'http://localhost:3000/api';
 export const App = () => {
 
   const [posts, setPosts] = useState([]);
-  const [postData, setPostData] = useState({first_name: '', last_name: '', title: '', description: ''});
-  const [timeframe, setTimeframe] = useState('')
+  const [postData, setPostData] = useState({first_name: '', last_name: '', title: '', description: '', tag: ''});
+  const [timeframe, setTimeframe] = useState('');
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -31,7 +33,7 @@ export const App = () => {
 
 
 return (
-      <div>
+      <div className= "mainContainer">
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
