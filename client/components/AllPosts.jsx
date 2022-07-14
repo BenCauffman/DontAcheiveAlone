@@ -7,7 +7,7 @@ import '../styles.scss';
 
 
 
-const AllPosts = ({posts, timeframe, setTimeframe}) => {
+const AllPosts = ({posts, timeframe, setTimeframe, setPostData, postData}) => {
 
 
 
@@ -38,8 +38,8 @@ return (
 </FormControl> You Have Accomplished...
 </h1>
       </div>
-  <div className = "body">
-    <Posts posts = {posts}/>
+  <div style={{width: '75%'}}className = "body">
+    <Posts posts = {posts} setPostData= {setPostData} postData = {postData}/>
   </div>
   </div>
 )

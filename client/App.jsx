@@ -38,7 +38,7 @@ return (
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Routes>
-          <Route path="/" element ={<AllPosts posts = {posts} timeframe={timeframe} setTimeframe={setTimeframe} />}>
+          <Route path="/" element ={<AllPosts posts = {posts} timeframe={timeframe} setTimeframe={setTimeframe} setPostData ={setPostData} postData ={postData} />}>
           </Route>
           <Route path="/create" element ={<CreateAchievement posts = {posts} postData = {postData} setPostData = {setPostData} />}>
           </Route>
