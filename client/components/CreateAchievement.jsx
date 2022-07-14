@@ -3,6 +3,7 @@ import { Link, withRouter, Navigate } from 'react-router-dom';
 import { TextField, Card, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import axios from 'axios';
 const serverUrl = 'http://localhost:3000/api';
+import '../styles.scss';
 
 const CreateAchievement =({posts, postData, setPostData}) => {
 
@@ -24,26 +25,25 @@ const CreateAchievement =({posts, postData, setPostData}) => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div style={{display: 'flex'}} >
+      <form className = "card" style={{display: 'flex',flexDirection: 'column', alignItems: "flex-start", gap: '10px', backgroundColor: 'white'}} onSubmit={handleSubmit}>
         <TextField label = "First name" value ={postData.first_name} onChange ={(e)=>setPostData({...postData, first_name: e.target.value})}></TextField>
         <TextField label = "Last Name" value ={postData.last_name} onChange ={(e)=>setPostData({...postData, last_name: e.target.value})}></TextField>
         <TextField label = "Achievement" value ={postData.title} onChange ={(e)=>setPostData({...postData, title: e.target.value})}></TextField>
         <TextField label = "Description" value ={postData.description} onChange ={(e)=>setPostData({...postData, description: e.target.value})}></TextField>
-
         <div>
-        <InputLabel id="tagPicker">TimeFrame</InputLabel>
+        <InputLabel id="tagPicker">Tag</InputLabel>
           <Select value={posts.tag} labelId = "tagPicker" defaultValue={'Other'} onChange={handleChange}>
             <MenuItem value={'Personal'} onChange={handleChange}>Personal</MenuItem>
             <MenuItem value={'Professional'} onChange={handleChange}>Professional</MenuItem>
             <MenuItem value={'Other'} onChange={handleChange}>Other</MenuItem>
           </Select>
       </div>
-        <Button type = "submit">CLICK</Button>
-        {submitted && <Navigate to="/" />}
         <div className="newPost">
-  <Link to ='/'> Go Back </Link>
-  </div>
+        <button type = "submit">Submit Achievement! Good Job</button>
+        {submitted && <Navigate to="/" />}
+          <Link to ='/'> Go Back </Link>
+        </div>
 
 
       </form>

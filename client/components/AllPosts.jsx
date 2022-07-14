@@ -4,8 +4,6 @@ import Posts from './PostBody/Posts.jsx';
 import { Routes, Route, Router, Link } from 'react-router-dom';
 import '../styles.scss';
 
-//making request in app.js
-
 
 
 
@@ -20,33 +18,30 @@ const AllPosts = ({posts, timeframe, setTimeframe}) => {
 
 
 return (  
-  <Container className = "mainContainer" maxWidth = 'lg'>
-  <Container className = "header">
-    <Typography className = "title" variant ="h2" align="center">Within the Last
+  <div class="mainContainer">
+  <div className = "header">
+    <h1 className = "title" align="center">Within the Last &nbsp;
     <FormControl className = "datePicker">
   <InputLabel id="demo-simple-select-label"></InputLabel>
-  <Select
+  <Select style={{fontFamily: ['Cinzel', 'serif']}}
     labelId="demo-simple-select-label"
     id="demo-simple-select"
     value={timeframe}
     label="TimeFrame"
     onClick={handleChange}
    >
-    <MenuItem value={'Week'} onClick={handleChange}>Week</MenuItem>
-    <MenuItem value={'Month'} onClick={handleChange}>Month</MenuItem>
-    <MenuItem value={'Year'} onClick={handleChange}>Year</MenuItem>
+    <MenuItem style={{fontFamily:['Cinzel', 'serif'] }} value={'Week'} onClick={handleChange}>Week</MenuItem>
+    <MenuItem style={{fontFamily:['Cinzel', 'serif'] }} value={'Month'} onClick={handleChange}>Month</MenuItem>
+    <MenuItem style={{fontFamily:['Cinzel', 'serif'] }} value={'Year'} onClick={handleChange}>Year</MenuItem>
+    <MenuItem style={{fontFamily:['Cinzel', 'serif'] }} value={'5 Years'} onClick={handleChange}>5 Years</MenuItem>
   </Select>
-</FormControl> You Have Done...
-</Typography>
-      </Container>
-  <div className="newPost">
-  <Link to ='/create'> Create New Post </Link>
-  </div>
-  <Container className = "body">
-    <Typography className = "posts" variant="h5">Select Timeframe</Typography>
+</FormControl> You Have Accomplished...
+</h1>
+      </div>
+  <div className = "body">
     <Posts posts = {posts}/>
-  </Container>
-  </Container>
+  </div>
+  </div>
 )
 }
 export default AllPosts

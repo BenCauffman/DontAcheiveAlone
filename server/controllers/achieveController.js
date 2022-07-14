@@ -23,14 +23,14 @@ achieveController.getPosts = async (req, res, next) => {
       break;
     default:
       console.log('default')
-      myDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - 7);
+      myDate = new Date(date.getFullYear() - 5, date.getMonth(), date.getDate());
       maxDistanceDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - 14)
 
   }
   console.log(myDate)
 
 
-const query = 'SELECT * FROM posts WHERE created_at < $1  ORDER BY created_at DESC;'
+const query = 'SELECT * FROM posts WHERE created_at > $1  ORDER BY created_at DESC;'
 const params = [myDate]
 try {
   const result = await db.query(query, params);
